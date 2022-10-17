@@ -1,0 +1,300 @@
+
+Things to study on:
+	Axios package she uses.
+	
+
+	7:19 AM 4/26/2022
+
+Implementing the API here:
+https://rapidapi.com/adhicdm-V-hoiUpTlf8/api/sudoku-solver3/
+
+From this video:
+https://youtu.be/WDwhJNbWka0
+
+
+	8:56 AM 4/26/2022
+
+Working so far.  
+I am here in the video: 20:32
+
+The api in the video is different from the one at rapid api.
+
+I need to build this string with my input:
+
+'{"input":[0,0,8,9,0,0,4,0,0,0,0,5,6,0,0,0,0,0,3,0,0,7,0,0,6,0,9,5,0,0,0,0,4,0,2,0,0,0,0,0,0,0,0,6,5,0,0,2,0,0,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,8,9,0,0,0,7,0,4,0,0,2,0,0]}'
+
+And put it here in the request:
+
+ data: 
+
+
+That is my next step.
+
+dataString
+
+
+	9:11 AM 4/28/2022
+
+My request string works.  I get a successful response.
+
+
+{
+    "answer": [
+        1,
+        4,
+        5,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        2,
+        6,
+        7,
+        1,
+        8,
+        9,
+        3,
+        4,
+        5,
+        3,
+        8,
+        9,
+        4,
+        5,
+        7,
+        1,
+        2,
+        6,
+        4,
+        1,
+        2,
+        3,
+        6,
+        5,
+        8,
+        9,
+        7,
+        5,
+        7,
+        3,
+        8,
+        9,
+        1,
+        2,
+        6,
+        4,
+        6,
+        9,
+        8,
+        7,
+        2,
+        4,
+        5,
+        1,
+        3,
+        7,
+        2,
+        1,
+        6,
+        4,
+        3,
+        9,
+        5,
+        8,
+        8,
+        5,
+        4,
+        9,
+        7,
+        2,
+        6,
+        3,
+        1,
+        9,
+        3,
+        6,
+        5,
+        1,
+        8,
+        4,
+        7,
+        2
+    ]
+}
+
+
+Bad puzzles that can't be solved return the following:
+
+  error = AxiosError: Request failed with status code 503
+
+
+
+	9:16 AM 4/28/2022
+
+Continue with the video...
+
+
+	9:31 AM 4/28/2022
+
+My response is successfully displayed.  Test by solving a puzzle on sudoku.com
+
+
+Worked.
+
+greyInputs = [0,1,2,9,10,11,18,19,20,6,7,8,15,16,17,24,25,26,30,31,32,39,40,41,48,49,50,54,55,56,63,64,65,72,73,74,60,61,62,69,70,71,78,79,80];
+
+
+
+
+
+0,1,2,9,10,11,18,19,20,6,7,8,15,16,17,24,25,26,30,31,32,39,40,41,48,49,50,54,55,56,63,64,65,72,73,74,60,61,62,69,70,71,78,79,80
+
+
+if greyInputs.includes(i)
+
+
+	10:11 AM 4/28/2022
+
+
+Need to add a reset button.  And hide my api key.
+
+
+
+'X-RapidAPI-Key': '14e640551cmsh5474f75fb8dc66ap16a544jsn4c8c7f16b472'
+
+
+
+
+
+loadJsonFile();
+
+
+From greenlips js file:
+
+
+function loadJsonFile() {
+    // Loads the json file that contains the presentation data.  Creates the script array of song data.
+
+    // Load the JSON data file containing the song data.
+    // Use an AJAX XMLHttpRequest to retrieve the JSON file.
+    // https://www.w3schools.com/js/tryit.asp?filename=tryjson_http
+    // https://www.w3schools.com/js/js_json_http.asp
+
+    var xmlhttp = new XMLHttpRequest();
+    var url = "json/song.json";    // This is the name of the JSON file contining the song scrxipts.
+    
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        scriptArray = JSON.parse(this.responseText);
+        loadedJsonFile = "true";
+        buildSelectorDiv();
+        // TEMP <<<< This may not go here.  Just for testing the selector div temporarily.
+        // displaySelectorDiv();
+      }
+      if (this.readyState == 4 && this.status == 404) {
+        displayError("Data File NOT Available");
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+} // End function loadJsonFile()
+
+
+I have the thing.json file:
+
+{
+"thingee":"14e640551cmsh5474f75fb8dc66ap16a544jsn4c8c7f16b472"
+}
+
+
+keyThing = JSON.parse(this.responseText);
+
+keyThing.thingee
+
+
+	10:34 AM 4/28/2022
+
+
+
+   <button id="reset-button">Reset</button>
+
+
+
+const resetButton = document.querySelector('#reset-button');
+
+
+
+
+	10:52 AM 4/28/2022
+
+Reset button does not work.  Part of the problem is this function:
+
+const joinValues = () => {
+
+    const inputs2 = document.querySelectorAll('input')
+    inputs2.forEach(input => {
+        if (input.value) {
+            submission.push(input.value)
+        } else {
+            submission.push('0')  // Do I need a zero here???
+        }
+    })
+    dataString = '{"input":[' +  submission.toString() +  ']}';
+    console.log('dataString = ' + dataString);
+    console.log(submission)
+} 
+
+
+When you try to solve the second time after resetting the dataString ends up with the values twice:
+
+
+dataString = {"input":[1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+
+
+This needs to work differently.  I probably dont need this at all:  const submission = []
+
+
+
+Or empty the submission array using a loop and the following:
+
+
+https://www.w3schools.com/js/js_array_methods.asp
+
+JavaScript Array pop()
+The pop() method removes the last element from an array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.pop();
+
+
+I added this code and the reset button works now.
+
+
+const joinValues = () => {
+
+    let p = submission.length;
+
+    for (i = 0; i < p; i++ ) {
+        submission.pop();
+    }
+
+
+
+	11:04 AM 4/28/2022
+
+Ready to add Sudoku Solver to the main project.  Add a blog entry for this.
+
+
+	5:36 AM 4/29/2022
+
+sudoku-solver\index.html
+
+
+
+https://youtu.be/WDwhJNbWka0
+
+5 API Projects in 5 hours by Ania Kubow.

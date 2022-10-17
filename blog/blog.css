@@ -1,0 +1,28 @@
+body {
+    background-image: linear-gradient(to right, lightgreen , white);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkgreen;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+div {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 30px;
+    margin-left: 15px;
+    border: 1px solid darkgreen;
+    border-radius: 8px;
+    background-color: white;
+
+}
