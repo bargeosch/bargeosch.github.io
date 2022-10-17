@@ -1,0 +1,145 @@
+	8:13 AM 3/22/2022
+
+
+
+<!--
+3/22/2022
+Creating about page.  Base the styling on the following:
+Build Glass Website with HTML and CSS Tutorial
+https://youtu.be/O7WbVj5apxU
+-->
+
+
+	9:07 AM 3/22/2022
+
+I have the glass effect in the CSS.
+I stopped the video at 13:39.
+I think I have all the styling code I want.
+Just need to add the picture and text.
+
+
+Here is the current style.css file before I modify it:
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, yellow, green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass {
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255,0.7),
+    rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+}
+
+.circle1,
+.circle2{
+    background: white;
+    background: linear-gradient(to right bottom, 
+    rgba(255, 255, 255,0.8),
+    rgba(255, 255, 255, 0.5)
+    );
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+
+}
+
+.circle1 {
+    top: 5%;
+    right: 15%;
+}
+
+.circle2 {
+    bottom: 5%;
+    left: 10%;
+}
+
+
+
+	9:15 AM 3/22/2022
+
+Add my picture.
+
+barry01.png
+
+141 x 221
+
+<img src="barry01.png" alt="My face." width="141" height="221">
+
+
+rgb(204, 255, 51)
+rgb(51, 102, 255)
+
+
+
+
+#container {
+  height: 100%
+  width: 100%;
+  margin: auto;
+  border: 1px solid gray;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+	7:25 AM 3/23/2022
+
+I don't really like the glass effect.  Going to remove it.
+
+
+	7:43 AM 3/23/2022
+
+In phone emulation the gradient background repeats.  Tried the following:
+
+https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+did not work.
+
+It does work but you need it after the background statement:
+
+body {
+    background: linear-gradient(to right top, rgb(80, 255, 51), rgb(255, 255, 255));
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+
+
+
