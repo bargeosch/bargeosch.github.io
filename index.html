@@ -1,1 +1,136 @@
-"Hello World" 
+<!--
+3/22/2022 
+This file implements the Full screen Overlay Navigation menu.
+Based on this example:
+https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp
+Fullscreen Overlay Nav Example
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_overlay
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>BarGeo1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  border: 1px solid gray;
+
+}
+
+
+#myMenu {
+    font-size:20px;
+    cursor:pointer; 
+    background-color: rgba(0,0,0, 0.9);
+    color: white;
+
+}
+
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+  <div class="overlay-content">
+    <a href="about/about1.html" onclick="closeNav()" target="maindisplay">About</a>
+    <a href="blog/blog.html" onclick="closeNav()" target="maindisplay">Blog</a>
+    <a href="greenlips/index.html" onclick="closeNav()" target="maindisplay">Green Lips</a>
+    <a href="Alt Flow/altflow.html" onclick="closeNav()" target="maindisplay">Alt Flow</a>
+    <a href="side scroll/index.html" onclick="closeNav()" target="maindisplay">Perry Mason</a>
+    <a href="madgirl/index.html" onclick="closeNav()" target="maindisplay">Smoking Hot</a>
+    <a href="unexpected\circular.html" onclick="closeNav()" target="maindisplay">Unexpected</a>
+    <a href="wordguess\wordguess.html" onclick="closeNav()" target="maindisplay">Word Guess Game</a>
+    <a href="sudoku-solver\index.html" onclick="closeNav()" target="maindisplay">Sudoku Solver</a>
+  </div>
+</div>
+<div id="myMenu" onclick="openNav()">Menu</div>
+<div >
+<iframe id="myIframe" src="about/about1.html" name="maindisplay" width="100%" height="100%" title="Iframe"
+style=border:none style>
+</iframe>
+</div>
+
+
+<script>
+
+var frme = document.getElementById("myIframe")
+
+frme.width = window.innerWidth;
+frme.height = window.innerHeight - 50;
+
+window.addEventListener('resize', function(){
+    frme.width = window.innerWidth;
+    frme.height = window.innerHeight - 50;
+
+});
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+     
+</body>
+</html>
