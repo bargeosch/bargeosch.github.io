@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link type="text/css" rel="stylesheet" href="project01.css">  
+<script src="wordguess.js"></script>  
+</head>
+<body onload="onloadFunctionW()">
+<h1>Word Guess Game</h1>
+<p>
+    <button class="button button1" id=play onclick="modeFunction('play')">Play</button>
+    <button class="button button1" id=how onclick="modeFunction('how')">How to Play</button>
+    <button class="button button1" id=stats onclick="modeFunction('stats')">Stats</button>
+
+</p>
+<div id="wHint">
+    <p id="pClue">.</p>
+    <p id="pScore">.</p>
+</div>
+<div id="wPuzzle">
+    <p id="pPuzzle">.</p>
+    <p id="pMessage">.</p>
+
+
+    <button class="button button1" id=bPlayAgain onclick="playMode()">Play Again?</button>
+</div>
+<div id="wHowTo">
+    <h3>How to Play<br></h3>
+    <p>
+    Enter a letter that you think may occur in the puzzle. <br>
+    You will receive 30 points for each correct letter. <br>
+    If the letter occurs more than once you will receive 30 points per occurrance. <br>
+    If the letter does not occur in the puzzle 10 points will be subtracted from your score. <br><br>
+    Good Luck!
+    </p>
+</div>
+<div id="wStats">
+    <h3>Game Statistics<br></h3>
+    <p id="noMore"></p>
+    <p>
+        Total score: <span id="totScore"></span><br>
+        Number of puzzles completed:  <span id="puzCompleted"></span><br>
+        Number of correct letters:  <span id="corLetters"></span><br> 
+        Number of wrong letters:  <span id="wrongLetters"></span><br>   
+        Total letters:  <span id="totLetters"></span><br>   
+        Rank:  <span id="rank"></span><br>  
+        <button class="button button1" id=bresetStats onclick="resetStats()">Reset Stats</button>
+    </p>
+</div>
+<div id="kb">
+<span id="kbRow">
+    <button class="button button2" onclick="kbPressed('Q')">Q</button>
+    <button class="button button2" onclick="kbPressed('W')">W</button>
+    <button class="button button2" onclick="kbPressed('E')">E</button>
+    <button class="button button2" onclick="kbPressed('R')">R</button>
+    <button class="button button2" onclick="kbPressed('T')">T</button>
+    <button class="button button2" onclick="kbPressed('Y')">Y</button>
+    <button class="button button2" onclick="kbPressed('U')">U</button>
+    <button class="button button2" onclick="kbPressed('I')">I</button>
+    <button class="button button2" onclick="kbPressed('O')">O</button>
+    <button class="button button2" onclick="kbPressed('P')">P</button>
+</span><br>
+<span id="kbRow">
+    <button class="button button2" onclick="kbPressed('A')">A</button>
+    <button class="button button2" onclick="kbPressed('S')">S</button>
+    <button class="button button2" onclick="kbPressed('D')">D</button>
+    <button class="button button2" onclick="kbPressed('F')">F</button>
+    <button class="button button2" onclick="kbPressed('G')">G</button>
+    <button class="button button2" onclick="kbPressed('H')">H</button>
+    <button class="button button2" onclick="kbPressed('J')">J</button>
+    <button class="button button2" onclick="kbPressed('K')">K</button>
+    <button class="button button2" onclick="kbPressed('L')">L</button>
+</span><br>
+<span id="kbRow">
+    <button class="button button2" onclick="kbPressed('Z')">Z</button>
+    <button class="button button2" onclick="kbPressed('X')">X</button>
+    <button class="button button2" onclick="kbPressed('C')">C</button>
+    <button class="button button2" onclick="kbPressed('V')">V</button>
+    <button class="button button2" onclick="kbPressed('B')">B</button>
+    <button class="button button2" onclick="kbPressed('N')">N</button>
+    <button class="button button2" onclick="kbPressed('M')">M</button>
+</span><br>
+
+</div>
+
+</body>
+</html>

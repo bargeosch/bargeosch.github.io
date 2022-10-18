@@ -1,0 +1,151 @@
+/*
+Barry Schwartzkopf, 5/25/2021
+Colors:
+#FFFFFF  White
+#678FFE  Light blue
+#0247FE  Blue
+#012998  Dark blue
+#000000  Black
+
+
+*/
+body {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+/* Style of app window. */
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #FFFFFF;
+    height: 500px;
+    color: black;
+    border-radius: 10px;
+}
+
+/* Drop down menu - start */
+.topnav {
+    overflow: hidden;
+    background-color: #678FFE; /* drop down menu */
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+/* Logo in the top menu. */
+.topnav a {
+    color: #000000;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.topnav a.icon {
+    background: black;
+    color: #FFFFFF;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    background-color: #012998;
+    color: #FFFFFF;
+  }
+
+  .active {
+    background-color: #678FFE;
+    color: #012998;
+  }
+
+  /* Drop down menu - end */
+
+  .button1 {
+    background: #678FFE;  
+    color: #000000;
+    border-radius: 6px;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 6px 6px; 
+   }
+
+  .button1:hover {
+    background-color: #012998; 
+    color: #FFFFFF;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+  }   
+
+  .watchclass {
+    text-align: center;
+  }
+
+  .timeDisplay {
+    background: #012998;  
+    color: #FFFFFF;
+    font-size: 60px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .note {
+    background: #012998; 
+    color: #FFFFFF;
+    border-radius: 6px;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    margin: 4px 12px;
+    padding: 6px 16px; 
+
+  }
+
+ #wHint {
+    background: #678FFE;  
+    color: #000000;
+    border-radius: 6px;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 3px 3px;
+    padding: 3px 3px; 
+  }
+
+  #wPuzzle {
+    background: #012998;  
+    color: #FFFFFF;
+    border-radius: 6px;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 3px 3px;
+    padding: 3px 3px; 
+  } 
+
+  .button2 {
+    background: #678FFE;  
+    color: #000000;
+    border-radius: 6px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 32px;
+    margin: 4px 2px;
+    padding: 6px 6px; 
+   }
+
+  .button2:hover {
+    background-color: #012998; 
+    color: #FFFFFF;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }   
+
+
+  #kb {
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+  }
+
+  #kbRow {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }

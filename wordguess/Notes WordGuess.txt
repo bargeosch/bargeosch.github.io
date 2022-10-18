@@ -1,0 +1,69 @@
+
+
+
+
+	6:59 AM 4/3/2022
+
+Need to add this div to display logic:
+
+<div id="kb">
+
+var ewKb;
+follow logic of ewPuzzle
+
+
+	6:58 AM 4/3/2022
+
+Replace this:
+
+    <label for="wInput">Type a Letter and Press Enter:</label>
+    <input type="text" id="wInput" name="wInput" maxlength="1" size="1" onchange="letterGuess()">
+
+With a new function called kbPressed('Q')
+
+ewInput = document.getElementById('wInput');
+
+
+Line commented out all wInput references.
+
+
+Replace the alert boxes with this message p:
+
+<p id="pMessage">.</p>
+var epMessage;
+
+
+	7:38 AM 4/3/2022
+
+
+Bug list:
+
+After you receive this message:
+Congratulations! You solved the puzzle with a score of 220!!!
+And before you press the play again button you can still enter letters and change your score.  Need to block this.
+The fix is here:
+
+kbPressed('Z')
+
+
+var kbBlocked = false;
+
+
+Fixed.  All known bugs are fixed.
+
+
+C:\Users\barry\Documents\Barry\WebDev\Project1\wordguess
+
+wordguess\wordguess.html
+
+
+
+
+
+
+
+
+
+
+
+
