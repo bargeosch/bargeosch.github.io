@@ -1,9 +1,0 @@
-	8:48 AM 4/14/2022
-
-Set animation rate based on bpm of song.
-
-        this.interval = setInterval(updateGameArea, 20);
-        },
-
-
-
