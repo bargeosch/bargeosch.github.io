@@ -125,11 +125,11 @@ body {
   .button2 {
     background: #678FFE;  
     color: #000000;
-    border-radius: 6px;
+    border-radius: 3px;
     font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 32px;
-    margin: 4px 2px;
-    padding: 6px 6px; 
+    font-size: 20px;
+    margin: 2px 2px;
+    padding: 3px 3px; 
    }
 
   .button2:hover {
